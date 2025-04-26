@@ -1,0 +1,232 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+}
+
+/* About Us Section */
+.about-us {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Moves text upward */
+    justify-content: space-between;
+    padding: 60px 10%;
+    background-color: #fff;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Left Side - Title & Text */
+.about-content {
+    width: 60%; /* More room for text */
+    animation: fadeInRight 1s ease forwards;
+    opacity: 0;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Right Side - Images */
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%; /* Smaller images */
+    animation: fadeInLeft 1s ease forwards;
+    opacity: 0;
+}
+
+.about-images img {
+    width: 80%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Fade In Animations */
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Scroll Trigger (Optional, JS-controlled) */
+.fade-in-section.is-visible .about-images,
+.fade-in-section.is-visible .about-content {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-us {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .about-content,
+    .about-images {
+        width: 100%;
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 70px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    overflow: visible;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Cart Icon */
+.cart {
+    position: relative;
+    margin-left: 10px;
+    padding-right: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart img {
+    width: 35px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    display: block;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    background: url('Images/footer.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 50px 10%;
+    display: flex;
+    align-items: center;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out 2s forwards;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-left h4 {
+    color: #c08b65;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    max-width: 120px;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #c08b65;
+    transform: scale(1.1);
+}

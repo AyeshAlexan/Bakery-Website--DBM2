@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bakery Admin Panel</title>
+  <link rel="stylesheet" href="/adminuser/adminpanel.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Bakery Admin Panel</h1>
+    <div class="form">
+      <input type="text" id="productName" placeholder="Product Name" required />
+      <input type="number" id="productPrice" placeholder="Price" required />
+      <input type="text" id="productDesc" placeholder="Description" required />
+      <input type="text" id="productImage" placeholder="Image URL" />
+      <button onclick="addProduct()">Add Product</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="productList"></tbody>
+    </table>
+  </div>
+
+  <script>
+    async function fetchProducts() {
+      const res = await fetch("http://localhost:3000/items");
+      const products = await res.json();
+      renderProducts(products);
+    }
+
+    function renderProducts(products) {
+      const productList = document.getElementById("productList");
+      productList.innerHTML = "";
+      products.forEach((p) => {
+        productList.innerHTML += `
+          <tr>
+            <td>${p[1]}</td>
+            <td>${p[2]}</td>
+            <td>${p[3]}</td>
+            <td><img src="${p[4]}" alt="Product Image" width="50" /></td>
+            <td>
+  
+              <button class="delete" onclick="deleteProduct(${p[0]})">Delete</button>
+
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    async function addProduct() {
+      const name = document.getElementById("productName").value;
+      const price = document.getElementById("productPrice").value;
+      const description = document.getElementById("productDesc").value;
+      const image_url = document.getElementById("productImage").value;
+
+      if (name && price && description) {
+        const newProduct = { name, price, description, image_url };
+
+        await fetch("http://localhost:3000/add-item", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newProduct),
+        });
+
+        // Clear form and reload
+        document.getElementById("productName").value = "";
+        document.getElementById("productPrice").value = "";
+        document.getElementById("productDesc").value = "";
+        document.getElementById("productImage").value = "";
+        fetchProducts();
+      } else {
+        alert("Please fill all required fields.");
+      }
+    }
+
+    async function deleteProduct(id) {
+      await fetch(`http://localhost:3000/delete-item/${id}`, {
+        method: "DELETE",
+      });
+      fetchProducts();
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchProducts);
+  </script>
+</body>
+</html>

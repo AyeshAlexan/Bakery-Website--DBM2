@@ -1,0 +1,450 @@
+/* Reset & Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 70px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+
+/* Cart Icon - Fixed for Full Visibility */
+.cart {
+    position: relative;
+    margin-left: 10px;
+    padding-right: 80px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart img {
+    width: 35px; 
+    height: auto;
+    filter: brightness(0) invert(1); 
+    display: block;
+}
+
+nav {
+    overflow: visible; 
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    background: #f9f6f2;
+    text-align: center;
+}
+
+/* Left & Right Diagonal Cut Images */
+.hero-image {
+    position: absolute;
+    top: 0;
+    width: 32%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Left Side Diagonal */
+.hero-image.left {
+    left: 0;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+}
+
+/* Right Side Diagonal */
+.hero-image.right {
+    right: 0;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 40%;
+    text-align: center;
+}
+
+.welcome {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.order-btn {
+    background: #f1c40f;
+    padding: 12px 25px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.order-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Section 2 */
+.services
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    background-color: white;
+}
+
+/* Left image */
+.services .image-container
+{
+    position: relative;
+    width: 45%;
+    overflow: hidden;
+    margin-top: -16%;
+}
+.services .image-container img 
+{
+    width: 102%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+}
+
+/*Right side */
+.services .service-content
+{
+    width: 50%;
+}
+.services .service-title
+{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.services .services-list
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap :20px;
+}
+
+.service-item
+{
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+    width: 65%; 
+    height: auto; 
+    padding: 10px
+}
+.service-item img
+{
+    width: 80px;
+    height: auto;
+    margin-bottom: -4px;
+}
+.service-item h3
+{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.service-item p
+{
+    font-size: 14px;
+    color: #666;
+}
+.service-item:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+.divider {
+    border: none;
+    height: 3px;
+    background-color: #333; 
+    margin: 10px auto; 
+    width: 100%;
+}
+/* Section */
+.menu
+{
+    text-align: center;
+    padding: 60px 10%;
+    background-color: white;
+}
+.section-title
+{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.section-description
+{
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+.shop-online
+{
+    display: inline-block;
+    color: #d4a017;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.shop-online:hover
+{
+    text-decoration: underline;
+}
+.menu-grid
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 20px;
+    background: white ;
+}
+.menu-item
+{
+    background: white ;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, opacity 0.6s ease-out;
+    opacity: 0;
+    transform: scale(0.8);
+}
+.menu-item.show {
+    opacity: 1;
+    transform: scale(1);
+}
+.menu-item img
+{
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+.menu-item h3
+{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.menu-item p
+{
+    font-size: 14px;
+    color: #666;
+}
+.menu-item:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* About us */
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    position: relative;
+    background-color: #fff;
+}
+
+/* Left Side - Image Grid */
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto; 
+    gap: 15px;
+    width: 45%;
+    position: relative;
+}
+
+/* Individual Image Styling */
+.about-images img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Specific Image Sizing */
+.image-one {
+    grid-column: span 2; 
+    height: 300px; 
+}
+
+.image-two, 
+.image-three {
+    height: 150px; /* Smaller size */
+}
+
+/* Right Side - Text Content */
+.about-content {
+    width: 45%;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: -200px;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.about-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8B5E3B;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #6B4226;
+}
+
+.footer {
+    position: relative;
+    background: url('Images/footer.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 50px 10%;
+    display: flex;
+    align-items: center;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-left h4 {
+    color: #c08b65;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    max-width: 120px;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.social-icons a:hover {
+    color: #c08b65;
+}
