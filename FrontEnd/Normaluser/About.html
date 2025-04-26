@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<header>
+    <div class="logo">
+        <img src="Images/logo-2.png" alt="Bakery Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Cart.html" class="cart"><img src="Images/shopping-cart.png" alt="Cart"></a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+     <!-- About Us Section -->
+     <section class="about-us">
+        <div class="about-content">
+            <br>
+            <br>
+            <h2>About Us</h2>
+            <p>Welcome to our bakery, where every treat is made with love and passion. We take pride in crafting the finest cupcakes, cakes, and pastries, using only the best ingredients.</p>
+            <p>Our mission is to bring joy to every bite, ensuring each dessert is as delightful as it is delicious.</p>
+            <p>Our mission is simple yet meaningful: to bring joy and sweetness to every moment of your day. Whether you're celebrating a special occasion, treating yourself to something indulgent, or simply sharing a dessert with a friend, we want every experience with us to be memorable.</p>
+            <p>We take pride in our commitment to quality, our friendly customer service, and the smiles we create with each and every bake. Thank you for being part of our journey. We’re more than just a bakery – we’re a part of your celebrations, your comfort food cravings, and your everyday joys.</p>
+            <p>Come taste the love in every bite!</p>
+        </div>
+        
+        <div class="about-images">
+            <br><br><br>
+            <img src="Images/bakery.png" alt="Bakery Image" class="image-one">
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+    
+            <div class="footer-left">
+                <h4>Open Every Day:</h4>
+                <p><strong>Monday-Friday:</strong> 6am – 5pm</p>
+                <p><strong>Weekends:</strong> 7am – 4pm</p>
+    
+                <h4>Visit Us</h4>
+                <p><strong>123 Cupcake Street, Sweet Town, ST 45678</strong></p>
+                <p>ST 45678</p>
+            </div>
+ 
+            <div class="footer-right">
+                <div class="footer-logo">
+                    <img src="Images/logo-2.png" alt="footer_logo">
+                </div>
+                <div class="social-icons">
+                    <a href="Images/Icons/facebook-icon.png" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="Images/Icons/Gmail -icon.png" title="Email"><i class="fab fa-x-email"></i></a>
+                    <a href="Images/Icons/instagram-white-icon.png" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const faders = document.querySelectorAll('.fade-in-section');
+    
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        };
+    
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+    
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+    
+</body>
+</html>
